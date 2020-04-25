@@ -10,8 +10,8 @@ import java.util.function.Function;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import io.github.mmm.base.lang.ToStringFormatter;
 import io.github.mmm.ui.api.widget.input.UiRadioChoice;
-import io.github.mmm.ui.spi.ToStringFormatter;
 
 /**
  * Implementation of {@link UiRadioChoice} for android.

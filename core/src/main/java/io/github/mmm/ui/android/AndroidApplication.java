@@ -3,7 +3,8 @@
 package io.github.mmm.ui.android;
 
 import android.app.Application;
-import io.github.mmm.ui.android.context.AndroidContext;
+import android.content.Context;
+import android.view.WindowManager;
 
 /**
  * Base class for you main application to build your client with Android.<br>
@@ -21,11 +22,32 @@ import io.github.mmm.ui.android.context.AndroidContext;
  */
 public class AndroidApplication extends Application {
 
+  private static Context androidContext;
+
   @Override
   public void onCreate() {
 
-    AndroidContext.setContext(getApplicationContext());
+    androidContext = getApplicationContext();
     super.onCreate();
+  }
+
+  /**
+   * @return the android {@link Context}.
+   */
+  public static Context getAndroidContext() {
+
+    if (androidContext == null) {
+      throw new IllegalStateException("onCreate has not been called!");
+    }
+    return androidContext;
+  }
+
+  /**
+   * @return the native android {@link WindowManager}.
+   */
+  public static WindowManager getWindowManager() {
+
+    return (WindowManager) getAndroidContext().getSystemService(Context.WINDOW_SERVICE);
   }
 
 }

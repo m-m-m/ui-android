@@ -4,7 +4,7 @@ package io.github.mmm.ui.android.widget;
 
 import android.content.Context;
 import android.view.View;
-import io.github.mmm.ui.android.context.AndroidContext;
+import io.github.mmm.ui.android.AndroidApplication;
 import io.github.mmm.ui.api.event.UiEvent;
 import io.github.mmm.ui.api.event.UiFocusGainEvent;
 import io.github.mmm.ui.api.event.UiFocusLossEvent;
@@ -18,7 +18,7 @@ import io.github.mmm.ui.spi.widget.AbstractUiNativeWidgetWrapper;
  * @param <W> type of {@link #getWidget() android widget}.
  * @since 1.0.0
  */
-public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidgetWrapper<W> {
+public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> {
 
   /** @see #getWidget() */
   protected final W widget;
@@ -41,7 +41,7 @@ public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidg
    */
   protected static Context getContext() {
 
-    return AndroidContext.getContext();
+    return AndroidApplication.getAndroidContext();
   }
 
   @Override
@@ -51,10 +51,7 @@ public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidg
   }
 
   @Override
-  public View getTopWidget() {
-
-    return this.widget;
-  }
+  public abstract View getTopWidget();
 
   /**
    * @param uiWidget the {@link UiWidget}.
@@ -63,7 +60,7 @@ public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidg
   protected View getTopWidget(UiWidget uiWidget) {
 
     if (uiWidget instanceof UiCustomWidget) {
-      getTopWidget(((UiCustomWidget<?>) uiWidget).getDelegate());
+      return getTopWidget(((UiCustomWidget<?>) uiWidget).getDelegate());
     }
     return ((AndroidWidget<?>) uiWidget).getTopWidget();
   }
@@ -78,23 +75,6 @@ public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidg
   public void setId(String id) {
 
     this.id = id;
-    this.widget.setTag(id);
-    int idInt = 0;
-    for (int i = 0; i < id.length(); i++) {
-      char c = id.charAt(i);
-      if ((c >= '0') && (c <= '9')) {
-        idInt = (idInt * 10) + (c - '0');
-      } else {
-        return;
-      }
-    }
-    this.widget.setId(idInt);
-  }
-
-  @Override
-  protected void setVisibleNative(boolean visible) {
-
-    setVisible(getTopWidget(), visible);
   }
 
   /**
@@ -113,7 +93,6 @@ public abstract class AndroidWidget<W extends View> extends AbstractUiNativeWidg
   @Override
   protected void setEnabledNative(boolean enabled) {
 
-    // this.widget.setDisable(!enabled);
   }
 
   @Override

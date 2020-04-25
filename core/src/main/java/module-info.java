@@ -9,15 +9,18 @@
 @SuppressWarnings("rawtypes") //
 module io.github.mmm.ui.android.core {
 
-  requires transitive io.github.mmm.ui.api.core;
+  requires transitive io.github.mmm.ui.spi.core;
 
   requires transitive android;
 
-  provides io.github.mmm.ui.api.UiContext with //
-      io.github.mmm.ui.android.context.AndroidContext;
+  provides io.github.mmm.ui.api.UiDispatcher with //
+      io.github.mmm.ui.android.AndroidDispatcher;
 
   provides io.github.mmm.ui.api.UiScreen with //
       io.github.mmm.ui.android.AndroidScreen;
+
+  provides io.github.mmm.ui.api.factory.UiToggleGroupFactory with //
+      io.github.mmm.ui.android.AndroidToggleGroupFactory;
 
   provides io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative with //
       io.github.mmm.ui.android.factory.core.AndroidFactoryButton, //

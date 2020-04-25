@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.view.View;
-import io.github.mmm.ui.android.widget.AndroidWidget;
+import io.github.mmm.ui.android.widget.AndroidWidgetView;
 import io.github.mmm.ui.api.widget.UiWidget;
 import io.github.mmm.ui.api.widget.composite.UiComposite;
 
@@ -17,7 +17,7 @@ import io.github.mmm.ui.api.widget.composite.UiComposite;
  * @param <C> type of the {@link #getChild(int) child widgets}.
  * @since 1.0.0
  */
-public abstract class AndroidComposite<W extends View, C extends UiWidget> extends AndroidWidget<W>
+public abstract class AndroidComposite<W extends View, C extends UiWidget> extends AndroidWidgetView<W>
     implements UiComposite<C> {
 
   /** @see #getChild(int) */

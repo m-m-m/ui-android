@@ -17,6 +17,14 @@ public class AndroidToggleGroup implements UiToggleGroup {
 
   /**
    * The constructor.
+   */
+  public AndroidToggleGroup() {
+
+    this(AndroidApplication.getAndroidContext());
+  }
+
+  /**
+   * The constructor.
    *
    * @param context the android {@link Context}.
    */

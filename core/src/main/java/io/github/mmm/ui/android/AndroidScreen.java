@@ -5,7 +5,6 @@ package io.github.mmm.ui.android;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import io.github.mmm.ui.android.context.AndroidContext;
 import io.github.mmm.ui.spi.AbstractUiScreen;
 
 /**
@@ -42,7 +41,7 @@ public class AndroidScreen extends AbstractUiScreen {
   public Display getDisplay() {
 
     if (this.display == null) {
-      this.display = AndroidContext.getWindowManager().getDefaultDisplay();
+      this.display = AndroidApplication.getWindowManager().getDefaultDisplay();
     }
     return this.display;
   }

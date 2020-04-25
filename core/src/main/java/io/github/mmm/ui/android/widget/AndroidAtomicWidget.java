@@ -13,7 +13,7 @@ import io.github.mmm.ui.api.widget.UiAtomicWidget;
  * @param <W> type of {@link #getWidget() android widget}.
  * @since 1.0.0
  */
-public abstract class AndroidAtomicWidget<W extends View> extends AndroidWidget<W> implements UiAtomicWidget {
+public abstract class AndroidAtomicWidget<W extends View> extends AndroidWidgetView<W> implements UiAtomicWidget {
 
   private String tooltip;
 

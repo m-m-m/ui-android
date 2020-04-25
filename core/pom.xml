@@ -15,16 +15,11 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-api-core</artifactId>
+      <artifactId>mmm-ui-spi-core</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.android</groupId>
       <artifactId>android</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.android.material</groupId>
-      <artifactId>material</artifactId>
-      <type>aar</type> 
     </dependency>
   </dependencies>
 </project>
