@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+/**
+ * Provides the implementation of the form widgets for android.
+ */
+@SuppressWarnings("rawtypes") //
+module io.github.mmm.ui.android.form {
+
+  requires transitive io.github.mmm.ui.api.form;
+
+  requires transitive io.github.mmm.ui.android.core;
+
+  provides io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative with //
+      io.github.mmm.ui.android.factory.form.AndroidFactoryFormGroup, //
+      io.github.mmm.ui.android.factory.form.AndroidFactoryFormPanel, //
+      io.github.mmm.ui.android.factory.form.AndroidFactoryInputContainer //
+  ;
+
+  exports io.github.mmm.ui.android.widget.form;
+
+}

@@ -1,10 +1,10 @@
 /* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
  * http://www.apache.org/licenses/LICENSE-2.0 */
-package io.github.mmm.ui.android.factory.core;
+package io.github.mmm.ui.android.factory.form;
 
-import io.github.mmm.ui.android.widget.panel.AndroidFormPanel;
+import io.github.mmm.ui.android.widget.form.AndroidFormPanel;
 import io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative;
-import io.github.mmm.ui.api.widget.panel.UiFormPanel;
+import io.github.mmm.ui.api.widget.form.UiFormPanel;
 
 /**
  * {@link UiSingleWidgetFactoryNative} for {@link UiFormPanel}.

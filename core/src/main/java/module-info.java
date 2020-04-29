@@ -11,6 +11,8 @@ module io.github.mmm.ui.android.core {
 
   requires transitive io.github.mmm.ui.spi.core;
 
+  requires transitive io.github.mmm.ui.api.form;
+
   requires transitive android;
 
   provides io.github.mmm.ui.api.UiDispatcher with //
@@ -27,8 +29,6 @@ module io.github.mmm.ui.android.core {
       io.github.mmm.ui.android.factory.core.AndroidFactoryButtonPanel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryCheckbox, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryCollapsiblePanel, //
-      io.github.mmm.ui.android.factory.core.AndroidFactoryFormGroup, //
-      io.github.mmm.ui.android.factory.core.AndroidFactoryFormPanel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryHorizontalPanel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryImage, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryIntegerInput, //

@@ -1,6 +1,6 @@
 /* Copyright (c) The m-m-m Team, Licensed under the Apache License, Version 2.0
  * http://www.apache.org/licenses/LICENSE-2.0 */
-package io.github.mmm.ui.android.widget.panel;
+package io.github.mmm.ui.android.widget.form;
 
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -8,9 +8,9 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 import io.github.mmm.ui.android.widget.composite.AndroidValuedComposite;
 import io.github.mmm.ui.api.widget.UiLabel;
+import io.github.mmm.ui.api.widget.form.UiFormPanel;
 import io.github.mmm.ui.api.widget.input.UiAbstractInput;
 import io.github.mmm.ui.api.widget.input.UiInput;
-import io.github.mmm.ui.api.widget.panel.UiFormPanel;
 
 /**
  * Implementation of {@link UiFormPanel} for android.

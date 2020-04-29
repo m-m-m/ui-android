@@ -28,6 +28,7 @@
     <module>controller</module>
     <module>core</module>
     <module>chart</module>
+    <module>form</module>
     <module>format</module>
     <module>media</module>
     <module>menu</module>
@@ -63,6 +64,11 @@
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>mmm-ui-android-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-ui-android-form</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

@@ -7,23 +7,19 @@
     <artifactId>mmm-ui-android-parent</artifactId>
     <version>${revision}${changelist}</version>
   </parent>
-  <artifactId>mmm-ui-android-core</artifactId>
+  <artifactId>mmm-ui-android-form</artifactId>
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
-  <description>Implementation of core widgets for android.</description>
-
+  <description>Implementation of form widgets for android.</description>
+  
   <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-spi-core</artifactId>
-    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-api-form</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.android</groupId>
-      <artifactId>android</artifactId>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-ui-android-core</artifactId>
     </dependency>
   </dependencies>
 </project>
