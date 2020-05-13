@@ -15,7 +15,7 @@ import io.github.mmm.ui.api.widget.img.UiImage;
  */
 public class AndroidImage extends AndroidAbstractImage<ImageView> implements UiImage {
 
-  private String source;
+  private String url;
 
   private UiSize width;
 
@@ -32,17 +32,17 @@ public class AndroidImage extends AndroidAbstractImage<ImageView> implements UiI
   }
 
   @Override
-  public String getSource() {
+  public String getUrl() {
 
-    return this.source;
+    return this.url;
   }
 
   @Override
-  public void setSource(String source) {
+  public void setUrl(String url) {
 
-    Uri uri = Uri.parse(source);
+    Uri uri = Uri.parse(url);
     this.widget.setImageURI(uri);
-    this.source = source;
+    this.url = url;
   }
 
   @Override
