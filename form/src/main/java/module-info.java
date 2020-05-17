@@ -5,6 +5,8 @@
 
 /**
  * Provides the implementation of the form widgets for android.
+ * 
+ * @provides io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative
  */
 @SuppressWarnings("rawtypes") //
 module io.github.mmm.ui.android.form {

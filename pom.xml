@@ -32,6 +32,7 @@
     <module>format</module>
     <module>media</module>
     <module>menu</module>
+    <module>number</module>
     <module>tab</module>
     <module>temporal</module>
     <module>window</module>
@@ -84,6 +85,11 @@
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>mmm-ui-android-menu</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-ui-android-number</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

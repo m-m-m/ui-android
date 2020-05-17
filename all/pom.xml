@@ -27,6 +27,10 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-ui-android-form</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-android-format</artifactId>
     </dependency>
     <dependency>
@@ -36,6 +40,10 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-android-menu</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-ui-android-number</artifactId>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
