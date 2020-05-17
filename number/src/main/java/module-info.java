@@ -16,8 +16,13 @@ module io.github.mmm.ui.android.number {
   requires transitive io.github.mmm.ui.api.number;
 
   provides io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative with //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryBigDecimalInput, //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryBigIntegerInput, //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryDoubleInput, //
       io.github.mmm.ui.android.factory.number.AndroidFactoryIntegerInput, //
-      io.github.mmm.ui.android.factory.number.AndroidFactoryIntegerSlider //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryIntegerSlider, //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryLongInput, //
+      io.github.mmm.ui.android.factory.number.AndroidFactoryLongSlider //
   ;
 
   exports io.github.mmm.ui.android.widget.number;
