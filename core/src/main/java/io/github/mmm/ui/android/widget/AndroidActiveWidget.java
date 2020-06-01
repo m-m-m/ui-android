@@ -12,7 +12,7 @@ import io.github.mmm.ui.api.widget.UiActiveWidget;
  * @param <W> type of {@link #getWidget() android widget}.
  * @since 1.0.0
  */
-public abstract class AndroidActiveWidget<W extends View> extends AndroidAtomicWidget<W> implements UiActiveWidget {
+public abstract class AndroidActiveWidget<W extends View> extends AndroidWidgetView<W> implements UiActiveWidget {
 
   private char accessKey;
 

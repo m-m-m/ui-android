@@ -4,6 +4,8 @@ package io.github.mmm.ui.android.widget;
 
 import android.content.Context;
 import android.view.View;
+import android.view.View.OnLongClickListener;
+import android.widget.Toast;
 import io.github.mmm.ui.android.AndroidApplication;
 import io.github.mmm.ui.api.event.UiEvent;
 import io.github.mmm.ui.api.event.UiFocusGainEvent;
@@ -24,6 +26,8 @@ public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> 
   protected final W widget;
 
   private String id;
+
+  private OnLongClickListener tooltipListener;
 
   /**
    * The constructor.
@@ -100,6 +104,39 @@ public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> 
 
   }
 
+  @Override
+  protected void setTooltipNative(String tooltip) {
+
+    if (this.widget instanceof View) {
+      setTooltip((View) this.widget, tooltip);
+    }
+  }
+
+  /**
+   * @param view the {@link View}.
+   * @param tooltip the new {@link #getTooltip() tooltip}.
+   */
+  public void setTooltip(View view, String tooltip) {
+
+    view.setContentDescription(tooltip);
+    if (isEmpty(tooltip)) {
+      if (this.tooltipListener != null) {
+        view.setLongClickable(false);
+        view.setOnLongClickListener(null);
+        this.tooltipListener = null;
+      }
+    } else {
+      if (this.tooltipListener == null) {
+        view.setLongClickable(true);
+        this.tooltipListener = v -> {
+          Toast.makeText(v.getContext(), tooltip, Toast.LENGTH_SHORT).show();
+          return true;
+        };
+        view.setOnLongClickListener(this.tooltipListener);
+      }
+    }
+  }
+
   /**
    * @param view the {@link View} that changed.
    * @param hasFocus the new focus flag.
@@ -123,39 +160,6 @@ public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> 
     }
     fireEvent(event);
   }
-
-  // /**
-  // * @param <V> type of the value.
-  // * @param observable the observable (property) that changed.
-  // * @param oldValue the old value.
-  // * @param newValue the new value.
-  // */
-  // protected <V> void onValueChange(ObservableValue<? extends V> observable, V oldValue, V newValue) {
-  //
-  // boolean programmatic = getProgrammaticEventType() == UiValueChangeEvent.TYPE;
-  // onValueChanged(programmatic);
-  // fireEvent(new UiValueChangeEvent(this, programmatic));
-  // }
-  //
-  // /**
-  // * Called from {@link #onValueChange(ObservableValue, Object, Object)} if triggered by end-user.
-  // *
-  // * @param programmatic - see {@link UiValueChangeEvent#isProgrammatic()}.
-  // */
-  // protected void onValueChanged(boolean programmatic) {
-  //
-  // }
-  //
-  // /**
-  // * @param observable the observable (property) that changed.
-  // * @param oldValue the old value.
-  // * @param newValue the new value.
-  // */
-  // protected void onClose(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-  //
-  // boolean programmatic = getProgrammaticEventType() == UiHideEvent.TYPE;
-  // fireEvent(new UiHideEvent(this, programmatic));
-  // }
 
   @Override
   protected void onStylesChanged(String newStyles) {

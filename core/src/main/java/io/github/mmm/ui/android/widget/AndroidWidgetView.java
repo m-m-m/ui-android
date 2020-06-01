@@ -51,4 +51,10 @@ public abstract class AndroidWidgetView<W extends View> extends AndroidWidget<W>
     setVisible(getTopWidget(), visible);
   }
 
+  @Override
+  protected void setTooltipNative(String tooltip) {
+
+    setTooltip(this.widget, tooltip);
+  }
+
 }

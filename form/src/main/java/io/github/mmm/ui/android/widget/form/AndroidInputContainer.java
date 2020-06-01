@@ -5,7 +5,7 @@ package io.github.mmm.ui.android.widget.form;
 import java.nio.channels.IllegalSelectorException;
 
 import android.widget.LinearLayout;
-import io.github.mmm.ui.android.widget.AndroidAtomicWidget;
+import io.github.mmm.ui.android.widget.AndroidWidgetView;
 import io.github.mmm.ui.android.widget.input.AndroidInput;
 import io.github.mmm.ui.api.datatype.UiEnabledFlags;
 import io.github.mmm.ui.api.widget.UiLabel;
@@ -18,7 +18,7 @@ import io.github.mmm.ui.api.widget.input.UiInput;
  * @param <V> type of the {@link UiInput#getValue() input value}.
  * @since 1.0.0
  */
-public class AndroidInputContainer<V> extends AndroidAtomicWidget<LinearLayout> implements UiInputContainer<V> {
+public class AndroidInputContainer<V> extends AndroidWidgetView<LinearLayout> implements UiInputContainer<V> {
 
   private UiInput<V> child;
 

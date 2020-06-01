@@ -10,7 +10,7 @@ import io.github.mmm.ui.api.widget.UiLabel;
  *
  * @since 1.0.0
  */
-public class AndroidLabel extends AndroidAtomicWidget<TextView> implements UiLabel {
+public class AndroidLabel extends AndroidWidgetView<TextView> implements UiLabel {
 
   private String text;
 

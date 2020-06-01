@@ -3,7 +3,7 @@
 package io.github.mmm.ui.android.widget.img;
 
 import android.view.View;
-import io.github.mmm.ui.android.widget.AndroidAtomicWidget;
+import io.github.mmm.ui.android.widget.AndroidWidgetView;
 import io.github.mmm.ui.api.widget.img.UiAbstractImage;
 
 /**
@@ -12,7 +12,7 @@ import io.github.mmm.ui.api.widget.img.UiAbstractImage;
  * @param <W> type of {@link #getWidget() android widget}.
  * @since 1.0.0
  */
-public abstract class AndroidAbstractImage<W extends View> extends AndroidAtomicWidget<W> implements UiAbstractImage {
+public abstract class AndroidAbstractImage<W extends View> extends AndroidWidgetView<W> implements UiAbstractImage {
 
   private String altText;
 

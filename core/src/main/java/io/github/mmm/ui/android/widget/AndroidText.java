@@ -11,7 +11,7 @@ import io.github.mmm.ui.api.widget.UiText;
  *
  * @since 1.0.0
  */
-public class AndroidText extends AndroidAtomicWidget<TextView> implements UiText {
+public class AndroidText extends AndroidWidgetView<TextView> implements UiText {
 
   private String text;
 
