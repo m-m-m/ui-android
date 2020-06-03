@@ -5,6 +5,7 @@ package io.github.mmm.ui.android.widget.input;
 import android.widget.RadioButton;
 import io.github.mmm.ui.android.AndroidToggleGroup;
 import io.github.mmm.ui.api.UiToggleGroup;
+import io.github.mmm.ui.api.event.UiClickEvent;
 import io.github.mmm.ui.api.widget.input.UiRadioButton;
 
 /**
@@ -35,6 +36,13 @@ public class AndroidRadioButton extends AndroidSelectionInput<RadioButton> imple
 
     this.toggleGroup = (AndroidToggleGroup) group;
     this.toggleGroup.getGroup().addView(this.widget);
+  }
+
+  @Override
+  public void click() {
+
+    setValueForUser(Boolean.TRUE);
+    fireEvent(new UiClickEvent(this, true));
   }
 
 }

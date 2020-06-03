@@ -3,6 +3,7 @@
 package io.github.mmm.ui.android.widget.input;
 
 import android.widget.CheckBox;
+import io.github.mmm.ui.api.event.UiClickEvent;
 import io.github.mmm.ui.api.widget.input.UiCheckbox;
 import io.github.mmm.ui.api.widget.input.UiTextInput;
 
@@ -19,6 +20,13 @@ public class AndroidCheckbox extends AndroidSelectionInput<CheckBox> implements 
   public AndroidCheckbox() {
 
     super(new CheckBox(getContext()));
+  }
+
+  @Override
+  public void click() {
+
+    setValueForUser(Boolean.valueOf(!isSelected()));
+    fireEvent(new UiClickEvent(this, true));
   }
 
 }

@@ -4,7 +4,7 @@ package io.github.mmm.ui.android.widget.input;
 
 import android.widget.CompoundButton;
 import io.github.mmm.ui.api.attribute.AttributeWriteText;
-import io.github.mmm.ui.api.widget.attribute.UiWidgetWithSelection;
+import io.github.mmm.ui.api.widget.value.UiWidgetWithSelection;
 
 /**
  * Implementation of {@link UiWidgetWithSelection} and {@link io.github.mmm.ui.api.widget.input.UiInput} for android.
