@@ -29,9 +29,8 @@ public abstract class AndroidWidgetView<W extends View> extends AndroidWidget<W>
   }
 
   @Override
-  public void setId(String id) {
+  protected void setIdNative(String id) {
 
-    super.setId(id);
     this.widget.setTag(id);
     int idInt = 0;
     for (int i = 0; i < id.length(); i++) {

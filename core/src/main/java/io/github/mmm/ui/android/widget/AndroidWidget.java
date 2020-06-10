@@ -25,8 +25,6 @@ public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> 
   /** @see #getWidget() */
   protected final W widget;
 
-  private String id;
-
   private OnLongClickListener tooltipListener;
 
   /**
@@ -67,18 +65,6 @@ public abstract class AndroidWidget<W> extends AbstractUiNativeWidgetWrapper<W> 
       return getTopWidget(((UiCustomWidget<?>) uiWidget).getDelegate());
     }
     return ((AndroidWidget<?>) uiWidget).getTopWidget();
-  }
-
-  @Override
-  public String getId() {
-
-    return this.id;
-  }
-
-  @Override
-  public void setId(String id) {
-
-    this.id = id;
   }
 
   /**

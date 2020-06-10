@@ -2,9 +2,13 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.ui.android.widget.button;
 
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import io.github.mmm.ui.android.widget.AndroidClickableWidget;
 import io.github.mmm.ui.api.widget.button.UiButton;
+import io.github.mmm.ui.api.widget.img.UiAbstractImage;
 
 /**
  * Implementation of {@link UiButton} using android {@link Button}.
@@ -14,6 +18,8 @@ import io.github.mmm.ui.api.widget.button.UiButton;
 public class AndroidButton extends AndroidClickableWidget<Button> implements UiButton {
 
   private String text;
+
+  private UiAbstractImage icon;
 
   /**
    * The constructor.
@@ -34,6 +40,27 @@ public class AndroidButton extends AndroidClickableWidget<Button> implements UiB
 
     this.widget.setText(text);
     this.text = text;
+  }
+
+  @Override
+  public UiAbstractImage getImage() {
+
+    return this.icon;
+  }
+
+  @Override
+  public void setImage(UiAbstractImage icon) {
+
+    // TODO: use MaterialButton
+    this.icon = icon;
+    Drawable drawable = null;
+    if (icon != null) {
+      View view = getTopWidget(icon);
+      if (view instanceof ImageView) {
+        drawable = ((ImageView) view).getDrawable();
+      }
+    }
+    this.widget.setCompoundDrawables(drawable, null, null, null);
   }
 
   @Override
