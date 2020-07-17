@@ -3,6 +3,8 @@
 package io.github.mmm.ui.android.widget.input;
 
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import io.github.mmm.ui.android.widget.AndroidActiveWidget;
 import io.github.mmm.ui.android.widget.AndroidLabel;
 import io.github.mmm.ui.api.datatype.bitmask.BitMask;
@@ -21,11 +23,17 @@ import io.github.mmm.validation.Validator;
  */
 public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidget<W> implements UiInput<V> {
 
+  private LinearLayout hLayout;
+
   private String name;
 
   private AndroidLabel nameWidget;
 
   private UiInputContainer<V> containerWidget;
+
+  private TextView prefixLabel;
+
+  private TextView suffixLabel;
 
   private Validator<? super V> validator;
 
@@ -43,6 +51,37 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
     super(widget);
     this.validator = Validator.none();
     this.modificationTimestamp = -1;
+  }
+
+  @Override
+  public View getTopWidget() {
+
+    if (this.hLayout != null) {
+      return this.hLayout;
+    }
+    return super.getTopWidget();
+  }
+
+  /**
+   * @return the {@link LinearLayout} to use as {@link #getTopWidget()}. Will be lazily created on the first call of
+   *         this method.
+   */
+  public LinearLayout getHLayout() {
+
+    if (this.hLayout == null) {
+      this.hLayout = new LinearLayout(getContext());
+      this.hLayout.setOrientation(LinearLayout.HORIZONTAL);
+      initHLayout(this.hLayout);
+    }
+    return this.hLayout;
+  }
+
+  /**
+   * @param layout the {@link LinearLayout} to initialize.
+   */
+  protected void initHLayout(LinearLayout layout) {
+
+    layout.addView(this.widget);
   }
 
   @Override
@@ -101,6 +140,76 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
       this.containerWidget = UiInputContainer.of(this);
     }
     return this.containerWidget;
+  }
+
+  @Override
+  public String getPrefix() {
+
+    if (this.prefixLabel == null) {
+      return null;
+    }
+    return this.prefixLabel.getText().toString();
+  }
+
+  @Override
+  public void setPrefix(String prefix) {
+
+    if (isEmpty(prefix)) {
+      if (this.prefixLabel != null) {
+        this.hLayout.removeView(this.prefixLabel);
+        this.prefixLabel = null;
+      }
+    } else {
+      if (this.prefixLabel == null) {
+        this.prefixLabel = new TextView(getContext());
+        // this.prefixLabel.setStyleName(STYLE_PREFIX);
+        getHLayout().addView(this.prefixLabel, 0);
+      }
+      this.prefixLabel.setText(prefix);
+    }
+  }
+
+  /**
+   * @return the {@link TextView} for {@link #getPrefix()}.
+   */
+  public TextView getPrefixLabel() {
+
+    return this.prefixLabel;
+  }
+
+  @Override
+  public String getSuffix() {
+
+    if (this.suffixLabel == null) {
+      return null;
+    }
+    return this.suffixLabel.getText().toString();
+  }
+
+  @Override
+  public void setSuffix(String suffix) {
+
+    if (isEmpty(suffix)) {
+      if (this.suffixLabel != null) {
+        this.hLayout.removeView(this.suffixLabel);
+        this.suffixLabel = null;
+      }
+    } else {
+      if (this.suffixLabel == null) {
+        this.suffixLabel = new TextView(getContext());
+        // this.suffixLabel.setStyleName(STYLE_SUFFIX);
+        getHLayout().addView(this.suffixLabel);
+      }
+      this.suffixLabel.setText(suffix);
+    }
+  }
+
+  /**
+   * @return the {@link TextView} for {@link #getSuffix()}.
+   */
+  public TextView getSuffixLabel() {
+
+    return this.suffixLabel;
   }
 
   @Override
