@@ -28,4 +28,4 @@ Module Dependency:
 
 === Status
 
-The implementation of `mmm-ui-api` for android is still very incomplete. We need your help if you have android experience. To understand why our progress with android is very limited read link:../wiki/android-sucks[this].
+The implementation of `mmm-ui-api` for android is still very incomplete. We need your help if you have android experience. To understand why our progress with android is very limited read link:../../wiki/android-sucks[this].
