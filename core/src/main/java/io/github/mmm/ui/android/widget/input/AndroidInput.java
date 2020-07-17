@@ -158,6 +158,7 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
       if (this.prefixLabel != null) {
         this.hLayout.removeView(this.prefixLabel);
         this.prefixLabel = null;
+        getStyles().remove(STYLE_WITH_PREFIX);
       }
     } else {
       if (this.prefixLabel == null) {
@@ -166,6 +167,7 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
         getHLayout().addView(this.prefixLabel, 0);
       }
       this.prefixLabel.setText(prefix);
+      getStyles().add(STYLE_WITH_PREFIX);
     }
   }
 
@@ -193,6 +195,7 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
       if (this.suffixLabel != null) {
         this.hLayout.removeView(this.suffixLabel);
         this.suffixLabel = null;
+        getStyles().remove(STYLE_WITH_SUFFIX);
       }
     } else {
       if (this.suffixLabel == null) {
@@ -201,6 +204,7 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
         getHLayout().addView(this.suffixLabel);
       }
       this.suffixLabel.setText(suffix);
+      getStyles().add(STYLE_WITH_PREFIX);
     }
   }
 
