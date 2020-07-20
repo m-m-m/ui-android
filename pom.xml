@@ -31,7 +31,7 @@
     <module>form</module>
     <module>format</module>
     <module>media</module>
-    <module>menu</module>
+    <module>navigation</module>
     <module>number</module>
     <module>tab</module>
     <module>temporal</module>
@@ -84,7 +84,7 @@
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>mmm-ui-android-menu</artifactId>
+        <artifactId>mmm-ui-android-navigation</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -120,26 +120,26 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+<!-- 
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+          <groupId>com.simpligility.maven.plugins</groupId>
           <artifactId>android-maven-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>4.6.0</version>
           <extensions>true</extensions>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+        <groupId>com.simpligility.maven.plugins</groupId>
         <artifactId>android-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
-
+ -->
   <repositories>
     <repository>
       <id>google</id>

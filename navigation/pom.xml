@@ -7,15 +7,15 @@
     <artifactId>mmm-ui-android-parent</artifactId>
     <version>${revision}${changelist}</version>
   </parent>
-  <artifactId>mmm-ui-android-menu</artifactId>
+  <artifactId>mmm-ui-android-navigation</artifactId>
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
-  <description>Implementation of menu widgets for android.</description>
+  <description>Implementation of navigation widgets for android.</description>
   
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-api-menu</artifactId>
+      <artifactId>mmm-ui-api-navigation</artifactId>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
