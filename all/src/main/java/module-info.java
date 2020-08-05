@@ -10,6 +10,8 @@ module io.github.mmm.ui.android.all {
 
   requires transitive io.github.mmm.ui.android.form;
 
+  requires transitive io.github.mmm.ui.android.menu;
+
   requires transitive io.github.mmm.ui.android.number;
 
 }
