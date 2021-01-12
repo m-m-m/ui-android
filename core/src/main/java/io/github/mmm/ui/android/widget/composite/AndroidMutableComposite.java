@@ -29,8 +29,8 @@ public abstract class AndroidMutableComposite<W extends View, C extends UiWidget
   @Override
   public void addChild(C child, int index) {
 
-    setParent(child, this);
     addChildWidget(child, index);
+    setParent(child, this);
     if (index == -1) {
       this.children.add(child);
     } else {

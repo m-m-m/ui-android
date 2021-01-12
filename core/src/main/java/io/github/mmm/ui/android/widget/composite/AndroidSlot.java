@@ -36,8 +36,8 @@ public class AndroidSlot extends AndroidComposite<LinearLayout, UiRegularWidget>
       return;
     }
     if (this.child != null) {
-      setParent(this.child, null);
       this.widget.removeAllViews();
+      setParent(this.child, null);
     }
     this.widget.addView(getTopWidget(child));
     this.child = child;
