@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.github.m-m-m</groupId>
     <artifactId>mmm</artifactId>
-    <version>7</version>
+    <version>10</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-ui-android-parent</artifactId>
@@ -120,7 +120,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-<!-- 
+<!--
   <build>
     <pluginManagement>
       <plugins>
