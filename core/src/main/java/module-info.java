@@ -5,7 +5,7 @@
 
 /**
  * Provides the implementation of the core UI for android.
- * 
+ *
  * @provides io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative
  * @provides io.github.mmm.ui.api.factory.UiToggleGroupFactory
  * @provides io.github.mmm.ui.api.UiScreen
@@ -36,6 +36,7 @@ module io.github.mmm.ui.android.core {
       io.github.mmm.ui.android.factory.core.AndroidFactoryCollapsiblePanel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryHorizontalPanel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryImage, //
+      io.github.mmm.ui.android.factory.core.AndroidFactoryInputContainer, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryLabel, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryPasswordInput, //
       io.github.mmm.ui.android.factory.core.AndroidFactoryRadioButton, //

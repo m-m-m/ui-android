@@ -9,9 +9,8 @@ import io.github.mmm.ui.android.widget.AndroidActiveWidget;
 import io.github.mmm.ui.android.widget.AndroidLabel;
 import io.github.mmm.ui.api.datatype.bitmask.BitMask;
 import io.github.mmm.ui.api.event.UiValueChangeEvent;
-import io.github.mmm.ui.api.widget.UiRegularWidget;
-import io.github.mmm.ui.api.widget.form.UiInputContainer;
 import io.github.mmm.ui.api.widget.input.UiInput;
+import io.github.mmm.ui.api.widget.input.UiInputContainer;
 import io.github.mmm.validation.Validator;
 
 /**
@@ -134,7 +133,7 @@ public abstract class AndroidInput<W extends View, V> extends AndroidActiveWidge
   }
 
   @Override
-  public UiRegularWidget getContainerWidget() {
+  public UiInputContainer<V> getContainerWidget() {
 
     if (this.containerWidget == null) {
       this.containerWidget = UiInputContainer.of(this);
