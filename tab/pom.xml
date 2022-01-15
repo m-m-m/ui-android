@@ -5,13 +5,14 @@
   <parent>
     <groupId>io.github.m-m-m</groupId>
     <artifactId>mmm-ui-android-parent</artifactId>
-    <version>${revision}${changelist}</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>mmm-ui-android-tab</artifactId>
-  <packaging>jar</packaging>
+  <!--<packaging>jar</packaging>-->
+  <packaging>aar</packaging>
   <name>${project.artifactId}</name>
   <description>Implementation of tab widgets for android.</description>
-  
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -20,6 +21,11 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-android-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.android.material</groupId>
+      <artifactId>material</artifactId>
+      <type>aar</type>
     </dependency>
   </dependencies>
 </project>
