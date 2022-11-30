@@ -22,7 +22,8 @@ import io.github.mmm.validation.Validator;
  * @param <V> type of the {@link #getValue() value}.
  * @since 1.0.0
  */
-public abstract class AndroidSlider<V extends Number> extends AndroidInput<SeekBar, V> implements UiSlider<V> {
+public abstract class AndroidSlider<V extends Number & Comparable<?>> extends AndroidInput<SeekBar, V>
+    implements UiSlider<V> {
 
   private static final int MAX_PROGRESS = 1000;
 

@@ -17,7 +17,7 @@ import io.github.mmm.validation.Validator;
  * @param <V> type of the {@link #getValue() value}.
  * @since 1.0.0
  */
-public abstract class AndroidNumberInput<V extends Number> extends AndroidTextualInput<EditText, V>
+public abstract class AndroidNumberInput<V extends Number & Comparable<?>> extends AndroidTextualInput<EditText, V>
     implements UiNumberInput<V> {
 
   private final NumericRange<V> range;
