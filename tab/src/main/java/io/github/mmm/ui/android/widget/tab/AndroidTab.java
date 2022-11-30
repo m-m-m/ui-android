@@ -49,7 +49,7 @@ public class AndroidTab extends AndroidWidget<Tab> implements UiTab {
     if (this.child != null) {
       setParent(this.child, null);
     }
-    this.widget.setContent(getTopWidget(child));
+    // this.widget.setContent(getTopWidget(child));
     this.child = child;
     setParent(child, this);
   }
@@ -76,7 +76,6 @@ public class AndroidTab extends AndroidWidget<Tab> implements UiTab {
   @Override
   protected void setIdNative(String id) {
 
-    super.setIdNative(id);
     this.widget.setTag(id);
   }
 
@@ -85,14 +84,14 @@ public class AndroidTab extends AndroidWidget<Tab> implements UiTab {
 
     AndroidTabPanel tabPanel = getTabPanel();
     if (tabPanel != null) {
-      tabPanel.setTabVisible(this, visible);
+      // tabPanel.setTabVisible(this, visible);
     }
   }
 
   @Override
   protected void setEnabledNative(boolean enabled) {
 
-    this.widget.setDisable(!enabled);
+    // this.widget.setDisable(!enabled);
   }
 
   @Override
@@ -126,13 +125,13 @@ public class AndroidTab extends AndroidWidget<Tab> implements UiTab {
   @Override
   public boolean isClosable() {
 
-    return this.widget.isClosable();
+    return true; // this.widget.isClosable();
   }
 
   @Override
   public void setClosable(boolean closable) {
 
-    this.widget.setClosable(closable);
+    // this.widget.setClosable(closable);
     if (closable) {
       ensureHandlers();
     }
@@ -144,7 +143,8 @@ public class AndroidTab extends AndroidWidget<Tab> implements UiTab {
    */
   public static AndroidTab get(Tab tab) {
 
-    return (AndroidTab) tab.getUserData();
+    // return (AndroidTab) tab.getUserData();
+    return null;
   }
 
 }

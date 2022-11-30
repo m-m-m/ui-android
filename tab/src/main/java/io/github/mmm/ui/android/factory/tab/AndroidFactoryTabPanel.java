@@ -2,7 +2,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package io.github.mmm.ui.android.factory.tab;
 
-import io.github.mmm.ui.android.widget.tab.AndroidTabPanel;
 import io.github.mmm.ui.api.factory.UiSingleWidgetFactoryNative;
 import io.github.mmm.ui.api.widget.tab.UiTabPanel;
 
@@ -22,7 +21,7 @@ public class AndroidFactoryTabPanel implements UiSingleWidgetFactoryNative<UiTab
   @Override
   public UiTabPanel create() {
 
-    return new AndroidTabPanel();
+    return null; // new AndroidTabPanel();
   }
 
 }
