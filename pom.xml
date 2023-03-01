@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.github.m-m-m</groupId>
     <artifactId>mmm</artifactId>
-    <version>18</version>
+    <version>20</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-ui-android-parent</artifactId>
@@ -16,7 +16,6 @@
 
   <properties>
     <mmm.repository>ui-android</mmm.repository>
-    <revision>0-SNAPSHOT</revision>
     <android.version>4.1.1.4</android.version>
     <androidx.version>1.2.0</androidx.version>
     <android.material.version>1.1.0</android.material.version>
