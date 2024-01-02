@@ -56,7 +56,7 @@ public abstract class AndroidNumberInput<V extends Number & Comparable<?>> exten
     if (value.isEmpty()) {
       return null;
     }
-    return getNumberType().valueOf(value);
+    return getNumberType().parse(value);
   }
 
   @Override

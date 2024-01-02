@@ -223,7 +223,7 @@ public abstract class AndroidSlider<V extends Number & Comparable<?>> extends An
           return;
         }
         AndroidSlider.this.text = newText;
-        setValueToSlider(getNumberType().valueOf(AndroidSlider.this.text));
+        setValueToSlider(getNumberType().parse(AndroidSlider.this.text));
         onValueChanged();
       } catch (NumberFormatException e) {
         // TODO
