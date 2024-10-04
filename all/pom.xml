@@ -11,7 +11,7 @@
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
   <description>Aggregation of all ui modules for android.</description>
-  
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -53,7 +53,7 @@
     -->
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-android-temporal</artifactId>
+      <artifactId>mmm-ui-android-time</artifactId>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -62,6 +62,10 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-android-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-ui-android-time</artifactId>
     </dependency>
   </dependencies>
 </project>

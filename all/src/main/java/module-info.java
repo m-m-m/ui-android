@@ -14,4 +14,6 @@ module io.github.mmm.ui.android.all {
 
   requires transitive io.github.mmm.ui.android.number;
 
+  requires transitive io.github.mmm.ui.android.time;
+
 }

@@ -15,12 +15,7 @@ import io.github.mmm.ui.api.widget.input.UiTextualInput;
  * @param <V> type of {@link #getValue() value}.
  * @since 1.0.0
  */
-public abstract class AndroidTextualInput<W extends TextView, V> extends AndroidInput<W, V>
-    implements UiTextualInput<V> {
-
-  private String autocomplete;
-
-  private String placeholder;
+public abstract class AndroidTextualInput<W extends TextView, V> extends AbstractAndroidTextualInput<W, V> {
 
   private TextChangeListener textChangeListener;
 
@@ -44,15 +39,9 @@ public abstract class AndroidTextualInput<W extends TextView, V> extends Android
   }
 
   @Override
-  public String getPlaceholder() {
-
-    return this.placeholder;
-  }
-
-  @Override
   public void setPlaceholder(String placeholder) {
 
-    this.placeholder = placeholder;
+    super.setPlaceholder(placeholder);
     this.widget.setHint(placeholder);
   }
 
@@ -67,19 +56,6 @@ public abstract class AndroidTextualInput<W extends TextView, V> extends Android
 
     setProgrammaticEventType(UiValueChangeEvent.TYPE);
     this.widget.setText(text);
-  }
-
-  @Override
-  public String getAutocomplete() {
-
-    return this.autocomplete;
-  }
-
-  @Override
-  public void setAutocomplete(String autocomplete) {
-
-    // Not supported by android
-    this.autocomplete = autocomplete;
   }
 
   private class TextChangeListener implements TextWatcher {

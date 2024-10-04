@@ -7,15 +7,15 @@
     <artifactId>mmm-ui-android-parent</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>mmm-ui-android-temporal</artifactId>
+  <artifactId>mmm-ui-android-time</artifactId>
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
   <description>Implementation of temporal widgets for android.</description>
-  
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-api-temporal</artifactId>
+      <artifactId>mmm-ui-api-time</artifactId>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
