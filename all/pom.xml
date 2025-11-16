@@ -63,9 +63,5 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>mmm-ui-android-core</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>mmm-ui-android-time</artifactId>
-    </dependency>
   </dependencies>
 </project>
