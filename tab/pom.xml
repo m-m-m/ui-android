@@ -26,6 +26,8 @@
       <groupId>com.google.android.material</groupId>
       <artifactId>material</artifactId>
       <type>aar</type>
+      <!-- bug in maven dependency management? -->
+      <version>${androidx.material.version}</version>
     </dependency>
   </dependencies>
 </project>
